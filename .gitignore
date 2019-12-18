@@ -102,3 +102,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+.idea
+
+# self-defined ignoring file
+/data_models/common_db.py
