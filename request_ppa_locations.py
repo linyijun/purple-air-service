@@ -5,16 +5,16 @@ from data_models.location_model import PurpleAirLocation
 from methods.db_operations import create_table, insert_locations
 
 
-def get_purplr_air_locations(purple_air_location_url):
+def get_purple_air_locations(purple_air_location_url):
 
     purple_air_location_json = requests.get(purple_air_location_url)
     data = json.loads(purple_air_location_json.text)
-    purplr_air_locations = []
+    purple_air_locations = []
 
     for item in data['results']:
         if item.get('Lon') is not None and item.get('Lat') is not None:
             item_parser = {
-                'id': item.get('ID'),
+                'sensor_id': item.get('ID'),
                 'parent_id': item['ParentID'] if item.get('ParentID') is not None else item['ID'],
                 'label': item.get('Label'),
                 'channel': 'b' if item.get('ParentID') is not None else 'a',
@@ -26,17 +26,17 @@ def get_purplr_air_locations(purple_air_location_url):
                 'lon': item.get('Lon'),
                 'lat': item.get('Lat')
             }
-            purplr_air_locations.append(item_parser)
-    return purplr_air_locations
+            purple_air_locations.append(item_parser)
+    return purple_air_locations
 
 
 def main():
 
     purple_air_location_url = 'https://www.purpleair.com/json'
-    purplr_air_locations = get_purplr_air_locations(purple_air_location_url)
+    purple_air_locations = get_purple_air_locations(purple_air_location_url)
 
-    create_table(PurpleAirLocation)
-    insert_locations(purplr_air_locations, PurpleAirLocation)
+    # create_table(PurpleAirLocation)
+    insert_locations(purple_air_locations, PurpleAirLocation)
 
 
 if __name__ == '__main__':

@@ -1,12 +1,12 @@
-from sqlalchemy import Column, Integer, DateTime, REAL, Text, Float
+from sqlalchemy import Column, Integer, Text, Float
 from geoalchemy2 import Geometry
 from data_models.common_db import Base
 
 
 class PurpleAirLocationTemplate(object):
-    __table_args__ = {'schema': 'air_quality_purple_air'}
+    __table_args__ = {'schema': 'purple_air'}
 
-    id = Column(Integer, nullable=False, index=True, primary_key=True)
+    sensor_id = Column(Integer, nullable=False, index=True, primary_key=True)
     parent_id = Column(Integer, nullable=False, index=True)
     channel = Column(Text)
     label = Column(Text)
