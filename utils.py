@@ -36,7 +36,7 @@ PURPLE_AIR_SET_2020 = {
     1: LosAngelesPurpleAir202001,
     2: LosAngelesPurpleAir202002,
     3: LosAngelesPurpleAir202003,
-    # 4: LosAngelesPurpleAir202004,
+    4: LosAngelesPurpleAir202004,
     # 5: LosAngelesPurpleAir202005,
     # 6: LosAngelesPurpleAir202006,
     # 7: LosAngelesPurpleAir202007,

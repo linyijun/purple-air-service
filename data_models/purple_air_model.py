@@ -26,6 +26,8 @@ class PurpleAirTemplate(object):
     humidity = Column(REAL)
 
 
+# ----- 2018 ----- 2018 ----- 2018 ----- 2018 ----- 2018 ----- 2018 ----- 2018 ----- 2018 ----- 2018 ----- #
+
 class LosAngelesPurpleAir201801(PurpleAirTemplate, Base):
     __tablename__ = 'los_angeles_purple_air_201801'
 
@@ -78,6 +80,8 @@ class LosAngelesPurpleAirHourly2018(PurpleAirTemplate, Base):
     __tablename__ = 'los_angeles_purple_air_hourly_2018'
 
 
+# ----- 2019 ----- 2019 ----- 2019 ----- 2019 ----- 2019 ----- 2019 ----- 2019 ----- 2019 ----- 2019 ----- #
+
 class LosAngelesPurpleAir201901(PurpleAirTemplate, Base):
     __tablename__ = 'los_angeles_purple_air_201901'
 
@@ -129,6 +133,8 @@ class LosAngelesPurpleAir201912(PurpleAirTemplate, Base):
 class LosAngelesPurpleAirHourly2019(PurpleAirTemplate, Base):
     __tablename__ = 'los_angeles_purple_air_hourly_2019'
 
+
+# ----- 2020 ----- 2020 ----- 2020 ----- 2020 ----- 2020 ----- 2020 ----- 2020 ----- 2020 ----- 2020 ----- #
 
 class LosAngelesPurpleAir202001(PurpleAirTemplate, Base):
     __tablename__ = 'los_angeles_purple_air_202001'

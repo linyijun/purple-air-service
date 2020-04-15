@@ -55,19 +55,19 @@ class Primary10Min:
 
     def avg10min(self, input_data):
         for obj in input_data:
-            if obj.pm1_atm is not None:
+            if obj.pm1_atm is not None and obj.pm1_atm > 0:
                 self.pm1_atm.append(obj.pm1_atm)
-            if obj.pm2_5_atm is not None:
+            if obj.pm2_5_atm is not None and obj.pm2_5_atm > 0:
                 self.pm2_5_atm.append(obj.pm2_5_atm)
-            if obj.pm10_atm is not None:
+            if obj.pm10_atm is not None and obj.pm10_atm > 0:
                 self.pm10_atm.append(obj.pm10_atm)
             if obj.rssi is not None:
                 self.rssi.append(obj.rssi)
-            if obj.temperature is not None:
+            if obj.temperature is not None and obj.temperature > 0:
                 self.temperature.append(obj.temperature)
-            if obj.humidity is not None:
+            if obj.humidity is not None and obj.humidity > 0:
                 self.humidity.append(obj.humidity)
-            if obj.pm2_5_cf_1 is not None:
+            if obj.pm2_5_cf_1 is not None and obj.pm2_5_cf_1 > 0:
                 self.pm2_5_cf_1.append(obj.pm2_5_cf_1)
         self.pm1_atm = to_avg(self.pm1_atm)
         self.pm2_5_atm = to_avg(self.pm2_5_atm)
@@ -110,21 +110,21 @@ class Secondary10Min:
 
     def avg10min(self, input_data):
         for obj in input_data:
-            if obj.p_0_3um_cnt is not None:
+            if obj.p_0_3um_cnt is not None and obj.p_0_3um_cnt > 0:
                 self.p_0_3um_cnt.append(obj.p_0_3um_cnt)
-            if obj.p_0_5um_cnt is not None:
+            if obj.p_0_5um_cnt is not None and obj.p_0_5um_cnt > 0:
                 self.p_0_5um_cnt.append(obj.p_0_5um_cnt)
-            if obj.p_1_0um_cnt is not None:
+            if obj.p_1_0um_cnt is not None and obj.p_1_0um_cnt > 0:
                 self.p_1_0um_cnt.append(obj.p_1_0um_cnt)
-            if obj.p_2_5um_cnt is not None:
+            if obj.p_2_5um_cnt is not None and obj.p_2_5um_cnt > 0:
                 self.p_2_5um_cnt.append(obj.p_2_5um_cnt)
-            if obj.p_5um_cnt is not None:
+            if obj.p_5um_cnt is not None and obj.p_5um_cnt > 0:
                 self.p_5um_cnt.append(obj.p_5um_cnt)
-            if obj.p_10um_cnt is not None:
+            if obj.p_10um_cnt is not None and obj.p_10um_cnt > 0:
                 self.p_10um_cnt.append(obj.p_10um_cnt)
-            if obj.pm1_cf_1 is not None:
+            if obj.pm1_cf_1 is not None and obj.pm1_cf_1 > 0:
                 self.pm1_cf_1.append(obj.pm1_cf_1)
-            if obj.pm10_cf_1 is not None:
+            if obj.pm10_cf_1 is not None and obj.pm10_cf_1 > 0:
                 self.pm10_cf_1.append(obj.pm10_cf_1)
         self.p_0_3um_cnt = to_avg(self.p_0_3um_cnt)
         self.p_0_5um_cnt = to_avg(self.p_0_5um_cnt)
@@ -160,7 +160,7 @@ def one_instance_request(loc, time_list):
     end_time_str = str(time_list[-1]).split(' ')[0] + '%20' + str(time_list[-1]).split(' ')[1][:-6]
 
     primary_data, secondary_data = [], []
-    parent_id, sensor_id, channel, primary_id, primary_key, secondary_id, secondary_key = loc
+    sensor_id, parent_id, channel, primary_id, primary_key, secondary_id, secondary_key = loc
 
     # primary
     url = 'https://thingspeak.com/channels/{id}/feeds.json?api_key={api_key}&start={start}&end={end}'\
