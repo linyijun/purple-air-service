@@ -69,24 +69,24 @@ def main(config):
 
 if __name__ == '__main__':
 
-    # year = 2018
-    # new_table_obj = LosAngelesPurpleAirHourly2018
-    # purple_air_set = PURPLE_AIR_SET_2018
-    #
-    # create_table(new_table_obj)
-    #
-    # for month in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]:
-    #     month_str = str(month).rjust(2, '0')
-    #     next_month_str = str(month % 12 + 1).rjust(2, '0')
-    #     next_year = year if month != 12 else year + 1
-    #     config = {
-    #         'TABLE': purple_air_set[month],
-    #         'START_TIME': f'{year}-{month_str}-01',
-    #         'END_TIME': f'{next_year}-{next_month_str}-01',
-    #         'NEW_TABLE': new_table_obj
-    #     }
-    #     main(config)
-    #
+    year = 2018
+    new_table_obj = LosAngelesPurpleAirHourly2018
+    purple_air_set = PURPLE_AIR_SET_2018
+
+    create_table(new_table_obj)
+
+    for month in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]:
+        month_str = str(month).rjust(2, '0')
+        next_month_str = str(month % 12 + 1).rjust(2, '0')
+        next_year = year if month != 12 else year + 1
+        config = {
+            'TABLE': purple_air_set[month],
+            'START_TIME': f'{year}-{month_str}-01',
+            'END_TIME': f'{next_year}-{next_month_str}-01',
+            'NEW_TABLE': new_table_obj
+        }
+        main(config)
+
     # year = 2019
     # new_table_obj = LosAngelesPurpleAirHourly2019
     # purple_air_set = PURPLE_AIR_SET_2019
@@ -105,20 +105,20 @@ if __name__ == '__main__':
     #     }
     #     main(config)
 
-    year = 2020
-    new_table_obj = LosAngelesPurpleAirHourly2020
-    purple_air_set = PURPLE_AIR_SET_2020
-
-    create_table(new_table_obj)
-
-    for month in [1, 3]:
-        month_str = str(month).rjust(2, '0')
-        next_month_str = str(month % 12 + 1).rjust(2, '0')
-        next_year = year if month != 12 else year + 1
-        config = {
-            'TABLE': purple_air_set[month],
-            'START_TIME': f'{year}-{month_str}-01',
-            'END_TIME': f'{next_year}-{next_month_str}-01',
-            'NEW_TABLE': new_table_obj
-        }
-        main(config)
+    # year = 2020
+    # new_table_obj = LosAngelesPurpleAirHourly2020
+    # purple_air_set = PURPLE_AIR_SET_2020
+    #
+    # create_table(new_table_obj)
+    #
+    # for month in [1, 3]:
+    #     month_str = str(month).rjust(2, '0')
+    #     next_month_str = str(month % 12 + 1).rjust(2, '0')
+    #     next_year = year if month != 12 else year + 1
+    #     config = {
+    #         'TABLE': purple_air_set[month],
+    #         'START_TIME': f'{year}-{month_str}-01',
+    #         'END_TIME': f'{next_year}-{next_month_str}-01',
+    #         'NEW_TABLE': new_table_obj
+    #     }
+    #     main(config)
